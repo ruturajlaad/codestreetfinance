@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Personal Blog{% endblock %}</title>
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Baskerville", serif;
+            padding: 20px;
+            background: #222;
+            color: #FFA500;
+            margin: 0;
+        }
+
+        .header {
+            padding: 10px;
+            font-size: 24px;
+            text-align: center;
+            background: #FFA500;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .leftcolumn {
+            float: left;
+            width: 70%;
+        }
+
+        .rightcolumn {
+            float: left;
+            width: 30%;
+            padding-left: 20px;
+        }
+
+        .card {
+            background-color: #333;
+            padding: 20px;
+            margin-top: 20px;
+            color: #FFA500;
+            font-size: 16px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2,
+        .card h3 {
+            color: #FFA500;
+            font-family: "Book Antiqua", serif;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .footer {
+            padding: 10px;
+            text-align: center;
+            background: #FFA500;
+            margin-top: 20px;
+            color: #222;
+            font-size: 14px;
+        }
+
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 800px) {
+            .leftcolumn,
+            .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h2>WealthHarbour</h2>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                {% block content %}
+                    <h2>Title</h2>
+                    <p>Content goes here.</p>
+                {% endblock %}
+            </div>
+        </div>
+
+        <div class="rightcolumn">
+            <div class="card">
+                <h3>Latest Article</h3>
+                {% block latestArticle %}
+                    <p>Latest article content goes here.</p>
+                {% endblock %}
+            </div>
+
+            <div class="card">
+                <h3>Most Commented Article</h3>
+                {% block mostCommentedArticle %}
+                    <p>Most commented article content goes here.</p>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h5>© 2023 All Rights Reserved</h5>
+    </div>
+
+</body>
+</html>

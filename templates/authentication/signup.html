@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #222;
+            color: #FFA500;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h3 {
+            color: #FFA500;
+            margin-top: 20px;
+        }
+
+        form {
+            width: 80%;
+            max-width: 400px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        label {
+            color: #FFA500;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #FFA500;
+            border-radius: 5px;
+            background-color: #333;
+            color: #FFA500;
+        }
+
+        button {
+            background-color: #FFA500;
+            color: #222;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+    <h3>Signup!</h3>
+
+    <form action="/signup" method="post">
+    {% csrf_token %}
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter your first name." required>
+        
+        <label for="lstname">Last Name</label>
+        <input type="text" id="lstname" name="lstname" placeholder="Enter your last name." required> 
+
+        <label for="img">Profile</label>
+        <input type="image" id="img" name="img" placeholder="Upload your profile picture!." >
+
+        <label for="uname">Username</label>
+        <input type="text" id="uname" name="uname" placeholder="Enter your username." required>
+
+        <label for="email">Email ID</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email." required>
+
+        <label for="pass1">Password</label>
+        <input type="password" id="pass1" name="pass1" placeholder="Enter a password." required>
+
+        <label for="pass2">Confirm Password</label>
+        <input type="password" id="pass2" name="pass2" placeholder="Re-enter your password." required>
+
+        <button type="submit">SignUp!</button>
+    </form>
+</body>
+</html>

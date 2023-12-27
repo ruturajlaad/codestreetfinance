@@ -1,0 +1,17 @@
+{% extends "authentication/artbase.html" %}
+
+{% block title %}Articles{% endblock %}
+
+{% block content %}
+    {% for article in articles %}
+        <div class="card">
+            <h2><a href="{% url 'article_detail' pk=article.pk %}"style="color: red;">{{ article.title }}</a></h2>
+
+            <p>
+                Published {{ article.publish }} by {{ article.author }}
+            </p>
+
+            {{ article.body | truncatewords:20 | safe }}
+        </div>
+    {% endfor %}
+{% endblock %}

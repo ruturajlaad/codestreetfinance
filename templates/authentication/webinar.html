@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webinars</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #222;
+            color: #FFA500;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h3 {
+            color: #007bff;
+            margin-top: 20px;
+        }
+
+        .webinar-container {
+            width: 80%;
+            max-width: 800px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        .video-list {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .video-list iframe {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Webinars</h3>
+
+    <div class="webinar-container">
+        <h4>Latest Webinars</h4>
+        <div class="video-list" id="videoList">
+            <!-- Video content will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- JavaScript for dynamically loading YouTube videos -->
+    <script>
+        // Replace this placeholder video ID with your actual YouTube video ID
+        const videoId = "OGjHGDEixAQ";
+
+        function loadVideo() {
+            const videoList = document.getElementById("videoList");
+            videoList.innerHTML = "";
+
+            const iframe = document.createElement("iframe");
+            iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+            iframe.setAttribute("frameborder", "0");
+            iframe.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+            iframe.setAttribute("allowfullscreen", "");
+
+            videoList.appendChild(iframe);
+        }
+
+        window.onload = loadVideo;
+    </script>
+
+</body>
+</html>

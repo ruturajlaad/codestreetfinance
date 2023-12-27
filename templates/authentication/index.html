@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SumedhInvests</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #222;
+            color: #FFA500;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+    
+            background-image: url("static/login/images/cccpic.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: #FFA500;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        header:hover {
+            background-color: #e08d00;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #222;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #FFA500;
+            margin: 0 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #e08d00;
+        }
+
+        .company-image {
+            width: 90%;
+            max-width: 500px;
+            margin-top: 20px;
+            border-radius: 0px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .company-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .company-image img:hover {
+            transform: scale(1.1);
+        }
+
+        .company-description {
+            margin-top: 20px;
+            width: 80%;
+            max-width: 600px;
+            color: #FFA500;
+            line-height: 1.5;
+        }
+
+        .registration-form {
+            width: 80%;
+            max-width: 400px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .registration-form:hover {
+            background-color: #333;
+        }
+
+        .form-heading {
+            color: #FFA500;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #FFA500;
+            color: #222;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #e08d00;
+        }
+
+        button a {
+            color: #222;
+            text-decoration: none;
+        }
+
+        .dynamic-content {
+            width: 80%;
+            max-width: 800px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SumedhInvests</h1>
+    </header>
+
+    <nav>
+        <a href="/home">Home</a>
+        <a href="/posts">Posts</a>
+        <a href="/webinar">Webinars</a>
+        <a href="/about">About Us</a>
+        <a href="/contactus">Contact Us</a>
+    </nav>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+    {%load static%}
+    <div class="company-image">
+        <img  src="{% static 'login/images/sumedh.invests.jpg' %}" alt="Company Image">
+    </div>
+
+    <div class="company-description">
+        <h2>Welcome to SumedhInvests!</h2>
+        <p>Title: Empowering Financial Futures: A Comprehensive Overview of XYZ Mutual Fund Distributors
+
+            Introduction:
+            XYZ Mutual Fund Distributors is a leading financial intermediary that stands at the forefront of empowering investors to achieve their financial goals through a diverse range of mutual fund products. Established with a commitment to providing superior investment solutions and personalized service, XYZ Mutual Fund Distributors has emerged as a trusted partner for investors seeking wealth creation, risk management, and long-term financial success.
+            
+            Vision and Mission:
+            Our vision is to be the preferred choice for investors looking to navigate the complexities of the financial markets and build a secure financial future. We are dedicated to fostering financial literacy and delivering innovative investment solutions tailored to meet the unique needs of our clients. Our mission is to create lasting value for investors by offering a comprehensive suite of mutual fund products, backed by expert advice and cutting-edge technology.
+            
+            Product Offering:
+            XYZ Mutual Fund Distributors offers a diverse portfolio of mutual funds, carefully curated to cater to varying risk appetites, investment horizons, and financial objectives. Whether clients seek capital appreciation, regular income, or a balanced approach, our product lineup spans equity funds, debt funds, hybrid funds, and thematic funds. Our fund selection process is driven by rigorous research, risk assessment, and a commitment to delivering consistent returns.
+            
+            Expert Advisory Services:
+            At the heart of our success lies our team of seasoned financial experts who possess in-depth market knowledge and a proven track record. XYZ Mutual Fund Distributors goes beyond mere product distribution, offering comprehensive advisory services to guide investors through their financial journey. Our certified financial advisors leverage their expertise to provide customized investment strategies aligned with individual goals, risk tolerance, and market conditions.
+            
+            Technological Innovation:
+            Recognizing the importance of technology in today's dynamic financial landscape, XYZ Mutual Fund Distributors has invested heavily in cutting-edge platforms and digital solutions. Our user-friendly online portal and mobile app empower investors with real-time access to their portfolios, market insights, and transaction capabilities. We believe in harnessing technology to enhance the overall investor experience and make investing more transparent and convenient.
+            
+            Education and Outreach:
+            Financial literacy is the cornerstone of sound investment decisions. XYZ Mutual Fund Distributors is committed to empowering investors with knowledge through educational programs, workshops, and webinars. Our outreach initiatives aim to demystify financial concepts, promote informed decision-making, and cultivate a culture of responsible investing.
+            
+            Transparency and Compliance:
+            Trust is paramount in the financial services industry. XYZ Mutual Fund Distributors places a high premium on transparency and compliance. We adhere to the highest ethical standards, ensuring that our clients receive accurate and timely information about their investments. Our commitment to regulatory compliance and good governance underscores our dedication to building enduring relationships based on trust and integrity.
+            
+            Client-Centric Approach:
+            At XYZ Mutual Fund Distributors, the client is at the center of everything we do. Our client-centric approach involves understanding the unique financial aspirations and concerns of each investor. We prioritize open communication, responsive customer service, and a proactive approach to addressing client needs. Through regular reviews and updates, we strive to keep our clients well-informed and confident in their investment decisions.
+            
+            Performance Track Record:
+            The performance of our mutual fund products is a testament to our commitment to delivering value. XYZ Mutual Fund Distributors has consistently outperformed benchmarks, demonstrating our ability to navigate market fluctuations and capitalize on investment opportunities. Our disciplined investment approach and risk management strategies contribute to the long-term success of our clients' portfolios.
+            
+            Social Responsibility:
+            As a responsible corporate citizen, XYZ Mutual Fund Distributors actively contributes to the well-being of society. Our social responsibility initiatives encompass philanthropy, community development, and sustainability efforts. We believe in giving back to the communities we serve and promoting financial inclusion as a means of fostering economic growth.
+            
+            Conclusion:
+            In summary, XYZ Mutual Fund Distributors is not just a distributor; we are a partner in your financial journey. With a comprehensive range of mutual fund products, expert advisory services, technological innovation, and a client-centric ethos, we are poised to help investors navigate the complexities of the financial markets and achieve their long-term financial goals. Join us in shaping a secure and prosperous financial future.</p>
+    </div>
+
+    <div class="registration-form">
+        <h2 class="form-heading">Register free to subscribe to your newsletter!</h2>
+        <button type="button"><a href="/signup">Sign Up</a></button>
+        <button type="button"><a href="/signin">Sign In</a></button>
+    </div>
+
+    <div class="dynamic-content">
+        <h2>Latest News</h2>
+        <p>Stay tuned for our latest updates and news in the financial world!</p>
+    </div>
+
+    {% if user.is_authenticated %}
+    <h3>Hello! {{ fname }}</h3>
+    <h4>You are successfully logged in!</h4>
+    <button type="button"><a href="/signout">Sign Out</a></button>
+    {% endif %}
+</body>
+</html>

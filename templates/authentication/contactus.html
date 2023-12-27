@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #222;
+            color: #FFA500;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h3 {
+            color: #007bff;
+            margin-top: 20px;
+        }
+
+        .contact-info {
+            width: 80%;
+            max-width: 400px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        .contact-info div {
+            margin-top: 10px;
+            color: #FFA500;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Contact Us</h3>
+
+    <div class="contact-info">
+        <div>Name: Ruturaj Laad</div>
+        <div>Occupation: AMFI Registered Mutual Fund Distributor</div>
+        <div>Address: Karvenagar, Pune</div>
+        <div>Phone: 9075523901</div>
+        <div>Email: laadruturaj@gmail.com</div>
+        <div>Business Email: codestreetfinance@gmail.com</div>
+    </div>
+
+    <button onclick="window.location.href='mailto:codestreetfinance@gmail.com'">Send Email</button>
+
+</body>
+</html>
